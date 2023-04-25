@@ -36,8 +36,19 @@ public class RegistrationPage {
   public RegistrationPage openPage() {
     open("/automation-practice-form");
 
-    executeJavaScript("$('footer').remove()");
+    return this;
+  }
+
+  public RegistrationPage removeHeader() {
+
     executeJavaScript("$('header').remove()");
+
+    return this;
+  }
+
+  public RegistrationPage removeFooter() {
+
+    executeJavaScript("$('footer').remove()");
 
     return this;
   }
@@ -75,7 +86,7 @@ public class RegistrationPage {
 
   public RegistrationPage setBirthDate(String day, String month, String year) {
     dateOfBirthInput.click();
-    calendarComponent.setDate("14", "March", "1990");
+    calendarComponent.setDate(day,month,year);
 
     return this;
   }

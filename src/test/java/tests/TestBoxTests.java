@@ -1,12 +1,11 @@
 package tests;
 
 import org.junit.jupiter.api.Test;
+import pages.BoxPage;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
 
 public class TestBoxTests extends TestBase {
+  BoxPage boxPage = new BoxPage();
 
   @Test
   void successfulFillFormTest() {

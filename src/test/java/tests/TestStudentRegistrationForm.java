@@ -1,17 +1,17 @@
 package tests;
 
 import org.junit.jupiter.api.Test;
-
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.*;
-
+import pages.RegistrationPage;
 
 public class TestStudentRegistrationForm extends TestBase {
+  RegistrationPage registrationPage = new RegistrationPage();
 
   @Test
   void successfulFillFormTest() {
 
     registrationPage.openPage()
+            .removeHeader()
+            .removeFooter()
             .setFirstNameInput("Elza")
             .setLastNameInput("Smite")
             .setUserEmailInput("elza@net.com")
